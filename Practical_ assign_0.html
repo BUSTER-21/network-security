@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+<head>
+  <div class="encrypt">
+    <h2>Encrypt/decrypt Text</h2>
+    <input  type="text" placeholder="Enter Text" id="ptxtt" >
+    <button onclick="convert1()">convert</button>
+    <input  type="text" placeholder="output Text" id="outptt">
+  </div>
+</head>
+
+<script>
+
+function convert1() //function for encrypt/decrypt text.
+{
+  var outpt;  //assigning output variable for final conversion.
+  
+  var ptxt = $("#ptxtt").val();  //reading input text and storing in variable.
+
+  outpt=''; //initialising empty string
+  var c;   //initialising variable.
+  for(var i=0;i<ptxt.length;i++) // loop over input string length.
+  {
+    
+    if(ptxt[i]>='a' && ptxt[i]<='z') //check condition for lowercase letters. 
+    {
+    var t=216-ptxt.charCodeAt(i); //getting reverse ascii number for alphabet.
+    c=String.fromCharCode(t);   //converting to string from reverse ascci number.
+    outpt+=c; // adding character in final string.
+    }
+    else if(ptxt[i]>='A' && ptxt[i]<='Z') //check condition for uppercase letters. 
+    {
+    var t=155-ch.charCodeAt(0); //getting reverse ascii number for alphabet.
+    c=String.fromCharCode(t); //converting to string from reverse ascci number.
+    outpt+=c; //adding character in final string.
+    }
+    else //condition if character is not alphabet letters.
+    {outpt+=ptxt[i];}
+
+  }
+  document.getElementById("outptt").value = outpt; // storing output value and initialising to original id.
+  
+}
+</script>
+
+</html>
